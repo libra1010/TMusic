@@ -32,9 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.checkBoxEX1 = new MusicPlayer.CheckBoxEX();
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.lblPastTime = new System.Windows.Forms.Label();
             this.lblSongName = new System.Windows.Forms.Label();
+            this.playingTrackBar1 = new MusicPlayer.PlayingTrackBar();
+            this.volumeMark1 = new MusicPlayer.VolumeMark();
             this.tbarVolume = new TrackBarEx.TrackBarEx();
             this.btnNextSong = new Tian.ButtonEx.ButtonEx();
             this.btnPreSong = new Tian.ButtonEx.ButtonEx();
@@ -80,9 +83,6 @@
             this.最大化ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.记住我的选择ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBoxEX1 = new MusicPlayer.CheckBoxEX();
-            this.playingTrackBar1 = new MusicPlayer.PlayingTrackBar();
-            this.volumeMark1 = new MusicPlayer.VolumeMark();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -158,10 +158,21 @@
             this.splitContainer2.SplitterDistance = 103;
             this.splitContainer2.TabIndex = 0;
             // 
+            // checkBoxEX1
+            // 
+            this.checkBoxEX1.AutoSize = true;
+            this.checkBoxEX1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxEX1.Checked = false;
+            this.checkBoxEX1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxEX1.Location = new System.Drawing.Point(15, 68);
+            this.checkBoxEX1.Name = "checkBoxEX1";
+            this.checkBoxEX1.Size = new System.Drawing.Size(58, 20);
+            this.checkBoxEX1.TabIndex = 7;
+            // 
             // lblTotalTime
             // 
             this.lblTotalTime.AutoSize = true;
-            this.lblTotalTime.Location = new System.Drawing.Point(266, 37);
+            this.lblTotalTime.Location = new System.Drawing.Point(223, 37);
             this.lblTotalTime.Name = "lblTotalTime";
             this.lblTotalTime.Size = new System.Drawing.Size(59, 12);
             this.lblTotalTime.TabIndex = 1;
@@ -184,6 +195,30 @@
             this.lblSongName.Size = new System.Drawing.Size(41, 12);
             this.lblSongName.TabIndex = 1;
             this.lblSongName.Text = "歌曲名";
+            // 
+            // playingTrackBar1
+            // 
+            this.playingTrackBar1.BackColor = System.Drawing.Color.Transparent;
+            this.playingTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.playingTrackBar1.Location = new System.Drawing.Point(5, 19);
+            this.playingTrackBar1.LRMargins = 10;
+            this.playingTrackBar1.Name = "playingTrackBar1";
+            this.playingTrackBar1.Size = new System.Drawing.Size(311, 18);
+            this.playingTrackBar1.TabIndex = 6;
+            this.playingTrackBar1.TotalTime = 100;
+            this.playingTrackBar1.TrackHeight = 4;
+            this.playingTrackBar1.Value = 0;
+            // 
+            // volumeMark1
+            // 
+            this.volumeMark1.BackColor = System.Drawing.Color.Transparent;
+            this.volumeMark1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.volumeMark1.IsMuted = false;
+            this.volumeMark1.Location = new System.Drawing.Point(225, 71);
+            this.volumeMark1.Name = "volumeMark1";
+            this.volumeMark1.Size = new System.Drawing.Size(24, 18);
+            this.volumeMark1.TabIndex = 4;
+            this.volumeMark1.Volume = 100;
             // 
             // tbarVolume
             // 
@@ -505,7 +540,7 @@
             this.cmenu.ItemSelectedColor = System.Drawing.Color.Blue;
             this.cmenu.Name = "contexMenuStripEx1";
             this.cmenu.SeperatorColor = System.Drawing.Color.DarkGray;
-            this.cmenu.Size = new System.Drawing.Size(149, 154);
+            this.cmenu.Size = new System.Drawing.Size(147, 154);
             // 
             // 文件toolStripMenuItem
             // 
@@ -513,20 +548,20 @@
             this.添加本地歌曲ToolStripMenuItem,
             this.添加本地歌曲文件夹ToolStripMenuItem});
             this.文件toolStripMenuItem.Name = "文件toolStripMenuItem";
-            this.文件toolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.文件toolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.文件toolStripMenuItem.Text = "文件";
             // 
             // 添加本地歌曲ToolStripMenuItem
             // 
             this.添加本地歌曲ToolStripMenuItem.Name = "添加本地歌曲ToolStripMenuItem";
-            this.添加本地歌曲ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.添加本地歌曲ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.添加本地歌曲ToolStripMenuItem.Text = "添加本地歌曲";
             this.添加本地歌曲ToolStripMenuItem.Click += new System.EventHandler(this.添加本地歌曲ToolStripMenuItem_Click);
             // 
             // 添加本地歌曲文件夹ToolStripMenuItem
             // 
             this.添加本地歌曲文件夹ToolStripMenuItem.Name = "添加本地歌曲文件夹ToolStripMenuItem";
-            this.添加本地歌曲文件夹ToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.添加本地歌曲文件夹ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.添加本地歌曲文件夹ToolStripMenuItem.Text = "添加本地歌曲文件夹";
             this.添加本地歌曲文件夹ToolStripMenuItem.Click += new System.EventHandler(this.添加本地歌曲文件夹ToolStripMenuItem_Click);
             // 
@@ -544,51 +579,51 @@
             this.toolStripMenuItem8,
             this.播放模式ToolStripMenuItem});
             this.播放toolStripMenuItem.Name = "播放toolStripMenuItem";
-            this.播放toolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.播放toolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.播放toolStripMenuItem.Text = "播放";
             // 
             // 播放暂停ToolStripMenuItem
             // 
             this.播放暂停ToolStripMenuItem.Name = "播放暂停ToolStripMenuItem";
-            this.播放暂停ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.播放暂停ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.播放暂停ToolStripMenuItem.Text = "播放/暂停";
             this.播放暂停ToolStripMenuItem.Click += new System.EventHandler(this.btnPlayPause_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(126, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(124, 6);
             // 
             // 上一首ToolStripMenuItem
             // 
             this.上一首ToolStripMenuItem.Name = "上一首ToolStripMenuItem";
-            this.上一首ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.上一首ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.上一首ToolStripMenuItem.Text = "上一首";
             this.上一首ToolStripMenuItem.Click += new System.EventHandler(this.btnPreSong_Click);
             // 
             // 下一首ToolStripMenuItem
             // 
             this.下一首ToolStripMenuItem.Name = "下一首ToolStripMenuItem";
-            this.下一首ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.下一首ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.下一首ToolStripMenuItem.Text = "下一首";
             this.下一首ToolStripMenuItem.Click += new System.EventHandler(this.btnNextSong_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(126, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(124, 6);
             // 
             // 增大音量ToolStripMenuItem
             // 
             this.增大音量ToolStripMenuItem.Name = "增大音量ToolStripMenuItem";
-            this.增大音量ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.增大音量ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.增大音量ToolStripMenuItem.Text = "增大音量";
             this.增大音量ToolStripMenuItem.Click += new System.EventHandler(this.增大音量ToolStripMenuItem_Click);
             // 
             // 减小音量ToolStripMenuItem
             // 
             this.减小音量ToolStripMenuItem.Name = "减小音量ToolStripMenuItem";
-            this.减小音量ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.减小音量ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.减小音量ToolStripMenuItem.Text = "减小音量";
             this.减小音量ToolStripMenuItem.Click += new System.EventHandler(this.减小音量ToolStripMenuItem_Click);
             // 
@@ -596,60 +631,60 @@
             // 
             this.静音ToolStripMenuItem.CheckOnClick = true;
             this.静音ToolStripMenuItem.Name = "静音ToolStripMenuItem";
-            this.静音ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.静音ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.静音ToolStripMenuItem.Text = "静音";
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(126, 6);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(124, 6);
             // 
             // 播放模式ToolStripMenuItem
             // 
             this.播放模式ToolStripMenuItem.Name = "播放模式ToolStripMenuItem";
-            this.播放模式ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.播放模式ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.播放模式ToolStripMenuItem.Text = "播放模式";
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(143, 6);
             // 
             // 显示桌面歌词ToolStripMenuItem
             // 
             this.显示桌面歌词ToolStripMenuItem.Name = "显示桌面歌词ToolStripMenuItem";
-            this.显示桌面歌词ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.显示桌面歌词ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.显示桌面歌词ToolStripMenuItem.Text = "显示桌面歌词";
             this.显示桌面歌词ToolStripMenuItem.Click += new System.EventHandler(this.显示桌面歌词ToolStripMenuItem_Click);
             // 
             // 锁定桌面歌词ToolStripMenuItem
             // 
             this.锁定桌面歌词ToolStripMenuItem.Name = "锁定桌面歌词ToolStripMenuItem";
-            this.锁定桌面歌词ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.锁定桌面歌词ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.锁定桌面歌词ToolStripMenuItem.Text = "锁定桌面歌词";
             this.锁定桌面歌词ToolStripMenuItem.Click += new System.EventHandler(this.锁定桌面歌词ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(143, 6);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(143, 6);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -665,68 +700,33 @@
             this.cmenuMaxMode.ItemSelectedColor = System.Drawing.Color.Blue;
             this.cmenuMaxMode.Name = "cmenuMaxMode";
             this.cmenuMaxMode.SeperatorColor = System.Drawing.Color.DarkGray;
-            this.cmenuMaxMode.Size = new System.Drawing.Size(149, 76);
+            this.cmenuMaxMode.Size = new System.Drawing.Size(147, 76);
             // 
             // 音乐魔方模式ToolStripMenuItem
             // 
             this.音乐魔方模式ToolStripMenuItem.Name = "音乐魔方模式ToolStripMenuItem";
-            this.音乐魔方模式ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.音乐魔方模式ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.音乐魔方模式ToolStripMenuItem.Text = "音乐魔方模式";
             this.音乐魔方模式ToolStripMenuItem.Click += new System.EventHandler(this.音乐魔方模式ToolStripMenuItem_Click);
             // 
             // 最大化ToolStripMenuItem
             // 
             this.最大化ToolStripMenuItem.Name = "最大化ToolStripMenuItem";
-            this.最大化ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.最大化ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.最大化ToolStripMenuItem.Text = "最大化";
             this.最大化ToolStripMenuItem.Click += new System.EventHandler(this.最大化ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(143, 6);
             // 
             // 记住我的选择ToolStripMenuItem
             // 
             this.记住我的选择ToolStripMenuItem.Name = "记住我的选择ToolStripMenuItem";
-            this.记住我的选择ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.记住我的选择ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.记住我的选择ToolStripMenuItem.Text = "记住我的选择";
             this.记住我的选择ToolStripMenuItem.Click += new System.EventHandler(this.记住我的选择ToolStripMenuItem_Click);
-            // 
-            // checkBoxEX1
-            // 
-            this.checkBoxEX1.AutoSize = true;
-            this.checkBoxEX1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxEX1.Checked = false;
-            this.checkBoxEX1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxEX1.Location = new System.Drawing.Point(15, 68);
-            this.checkBoxEX1.Name = "checkBoxEX1";
-            this.checkBoxEX1.Size = new System.Drawing.Size(58, 20);
-            this.checkBoxEX1.TabIndex = 7;
-            // 
-            // playingTrackBar1
-            // 
-            this.playingTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.playingTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.playingTrackBar1.Location = new System.Drawing.Point(5, 19);
-            this.playingTrackBar1.LRMargins = 10;
-            this.playingTrackBar1.Name = "playingTrackBar1";
-            this.playingTrackBar1.Size = new System.Drawing.Size(311, 18);
-            this.playingTrackBar1.TabIndex = 6;
-            this.playingTrackBar1.TotalTime = 100;
-            this.playingTrackBar1.TrackHeight = 4;
-            this.playingTrackBar1.Value = 0;
-            // 
-            // volumeMark1
-            // 
-            this.volumeMark1.BackColor = System.Drawing.Color.Transparent;
-            this.volumeMark1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.volumeMark1.IsMuted = false;
-            this.volumeMark1.Location = new System.Drawing.Point(225, 71);
-            this.volumeMark1.Name = "volumeMark1";
-            this.volumeMark1.Size = new System.Drawing.Size(24, 18);
-            this.volumeMark1.TabIndex = 4;
-            this.volumeMark1.Volume = 100;
             // 
             // MainForm
             // 
