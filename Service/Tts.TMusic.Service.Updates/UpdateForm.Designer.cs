@@ -1,6 +1,6 @@
 ﻿namespace Tts.TMusic.Service.Updates
 {
-    partial class Form1
+    partial class UpdateForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lsbMsg = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // lsbMsg
+            // 
+            this.lsbMsg.FormattingEnabled = true;
+            this.lsbMsg.ItemHeight = 12;
+            this.lsbMsg.Location = new System.Drawing.Point(13, 13);
+            this.lsbMsg.Name = "lsbMsg";
+            this.lsbMsg.Size = new System.Drawing.Size(259, 244);
+            this.lsbMsg.TabIndex = 0;
+            // 
+            // UpdateForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lsbMsg);
+            this.Name = "UpdateForm";
+            this.Text = "更新。。。";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lsbMsg;
     }
 }
 

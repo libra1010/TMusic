@@ -22,23 +22,44 @@ namespace Tts.TMusic.Service.Setup
 
         private async void btnSetup_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => 
+            await Task.Run(() =>
             {
                 string file = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Tts.TMusic.Service.exe");
-                if (ServiceHelper.ServiceIsExisted("TMusicService")) 
+                if (ServiceHelper.ServiceIsExisted("TMusicService"))
                 {
                     if (MessageBox.Show("TMusicService 服务已经安装,需要卸载重新安装吗？", "Ary you ok", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                         return;
 
                     if (ServiceHelper.IsServiceStart("TMusicService"))
                         ServiceHelper.StopService("TMusicService");
-                   
-                    ServiceHelper.UnInstallService(file,"TMusicService");
+
+                    ServiceHelper.UnInstallService(file, "TMusicService");
                 }
 
                 ServiceHelper.InstallService(null, file, "TMusicService");
                 MessageBox.Show("服务安装完成");
             });
+        }
+
+        private async void btnUnInstall_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+           {
+                string file = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Tts.TMusic.Service.exe");
+                if (!ServiceHelper.ServiceIsExisted("TMusicService"))
+                {
+                    MessageBox.Show("该服务没有安装，你卸载个毛线啊");
+                    return;
+                }
+
+
+                if (ServiceHelper.IsServiceStart("TMusicService"))
+                    ServiceHelper.StopService("TMusicService");
+
+                ServiceHelper.UnInstallService(file, "TMusicService");
+
+                MessageBox.Show("卸载完成");
+           });
         }
     }
 }

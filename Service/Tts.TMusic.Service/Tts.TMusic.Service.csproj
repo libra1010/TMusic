@@ -97,6 +97,10 @@
       <Project>{49743ade-ddb3-4b8a-bcad-c8ed0e92ce23}</Project>
       <Name>Tts.TMusic.Communication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tts.TMusic.Service.Updates\Tts.TMusic.Service.Updates.csproj">
+      <Project>{4152f050-f501-49ab-a297-b277220373bd}</Project>
+      <Name>Tts.TMusic.Service.Updates</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tts.TMusic.TPlayer\Tts.TMusic.TPlayer.csproj">
       <Project>{932265d9-6da8-4ed4-9b9d-929aa55f4453}</Project>
       <Name>Tts.TMusic.TPlayer</Name>

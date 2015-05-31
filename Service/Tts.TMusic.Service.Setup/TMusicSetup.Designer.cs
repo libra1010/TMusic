@@ -30,11 +30,12 @@
         {
             this.btnSetup = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnUnInstall = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSetup
             // 
-            this.btnSetup.Location = new System.Drawing.Point(91, 171);
+            this.btnSetup.Location = new System.Drawing.Point(28, 174);
             this.btnSetup.Name = "btnSetup";
             this.btnSetup.Size = new System.Drawing.Size(75, 23);
             this.btnSetup.TabIndex = 0;
@@ -51,11 +52,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
+            // btnUnInstall
+            // 
+            this.btnUnInstall.Location = new System.Drawing.Point(138, 174);
+            this.btnUnInstall.Name = "btnUnInstall";
+            this.btnUnInstall.Size = new System.Drawing.Size(75, 23);
+            this.btnUnInstall.TabIndex = 2;
+            this.btnUnInstall.Text = "卸载";
+            this.btnUnInstall.UseVisualStyleBackColor = true;
+            this.btnUnInstall.Click += new System.EventHandler(this.btnUnInstall_Click);
+            // 
             // TMusicSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnUnInstall);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSetup);
             this.Name = "TMusicSetup";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button btnSetup;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnUnInstall;
     }
 }
 
