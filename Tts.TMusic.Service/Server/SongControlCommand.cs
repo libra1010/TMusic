@@ -19,10 +19,16 @@ namespace Tts.TMusic.Service.Server
     {
         public void Exec(CommandFlag cmd, byte[] content)
         {
+            Exec(cmd, content, 0, content==null?0: content.Length);
+        }
+
+
+        public void Exec(CommandFlag cmd, byte[] content, int startIndex, int count)
+        {
             switch (cmd)
-            { 
+            {
                 case CommandFlag.Play://开始
-                    
+
                     break;
                 case CommandFlag.Paush://暂停
                     //ServiceContext.Current.Player
