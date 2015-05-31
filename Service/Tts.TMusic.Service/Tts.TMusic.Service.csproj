@@ -75,7 +75,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tts.TMusic.Common\Tts.TMusic.Common.csproj">
+    <ProjectReference Include="..\..\Tts.TMusic.Common\Tts.TMusic.Common.csproj">
       <Project>{a632153d-a349-4da8-9d9e-61bfb85af16f}</Project>
       <Name>Tts.TMusic.Common</Name>
     </ProjectReference>
