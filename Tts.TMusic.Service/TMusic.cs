@@ -20,6 +20,11 @@ namespace Tts.TMusic.Service
 
         protected override void OnStart(string[] args)
         {
+            string name = System.Environment.MachineName;
+            var win = new ServiceWindow();
+            win.Name = "TMusic.Service."+name;
+            win.Visible = false;
+            win.Show();
             ServerListen listen = new ServerListen();
             listen.Start();
         }
