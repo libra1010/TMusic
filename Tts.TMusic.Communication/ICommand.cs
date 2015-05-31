@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tts.TMusic.Common;
 
-namespace Tts.TMusic.Service.Server
+namespace Tts.TMusic.Communication
 {
     public  interface ICommand
     {

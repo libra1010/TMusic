@@ -6,64 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Tts.TMusic.Common;
 
-namespace Tts.TMusic.Service.Audios
+namespace Tts.TMusic.TPlayer
 {
-
-    public interface IPlayer
+    /// <summary>
+    /// 使用NAudio实现的播放器
+    /// </summary>
+    public class TNAudioPlayer
     {
-        /// <summary>
-        /// 当前播放曲目
-        /// </summary>
-        LinkedListNode<Song> Current { get; }
-
-        /// <summary>
-        /// 设置当前播放歌单
-        /// </summary>
-        /// <param name="playList"></param>
-        void SetPlayList(LinkedList<Song> playList);
-
-        /// <summary>
-        /// 开始播放
-        /// </summary>
-        void Play();
-
-        /// <summary>
-        /// 开始播放
-        /// </summary>
-        /// <param name="song"></param>
-        void Play(LinkedListNode<Song> song);
-
-        /// <summary>
-        /// 暂停
-        /// </summary>
-        void Paush();
-
-        /// <summary>
-        /// 停止
-        /// </summary>
-        void Stop();
-
-        /// <summary>
-        /// 下一首
-        /// </summary>
-        void Next();
-
-        /// <summary>
-        /// 上一首
-        /// </summary>
-        void Prev();
-    }
-
-    public class NVodPlayer : IPlayer
-    {
-        private LinkedList<Song> _list = null;
+         private LinkedList<Song> _list = null;
         private LinkedListNode<Song> _current = null;
         private IWavePlayer _waveOut;
         private AudioFileReader _audioFileReader;
 
-        public NVodPlayer() { }
+        public TNAudioPlayer() { }
 
-        public NVodPlayer(LinkedList<Song> playList)
+        public TNAudioPlayer(LinkedList<Song> playList)
         {
             _list = playList;
         }

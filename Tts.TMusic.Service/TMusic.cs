@@ -7,6 +7,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using Tts.TMusic.Service.Server;
 
 namespace Tts.TMusic.Service
 {
@@ -19,6 +20,9 @@ namespace Tts.TMusic.Service
 
         protected override void OnStart(string[] args)
         {
+            ServerListen listen = new ServerListen();
+            listen.Start();
+
         }
 
         protected override void OnStop()

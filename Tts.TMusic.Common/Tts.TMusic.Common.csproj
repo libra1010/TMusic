@@ -48,6 +48,12 @@
     <Compile Include="SerializeHelper.cs" />
     <Compile Include="Song.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tts.AsyncSocket\Tts.AsyncSocket.csproj">
+      <Project>{704793ee-46d7-4ca9-9897-7195beea857c}</Project>
+      <Name>Tts.AsyncSocket</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

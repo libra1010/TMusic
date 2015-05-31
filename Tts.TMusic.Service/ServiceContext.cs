@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tts.TMusic.Service.Audios;
+using Tts.TMusic.TPlayer;
 
 namespace Tts.TMusic.Service
 {
