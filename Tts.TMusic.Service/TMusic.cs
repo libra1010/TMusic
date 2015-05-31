@@ -22,7 +22,6 @@ namespace Tts.TMusic.Service
         {
             ServerListen listen = new ServerListen();
             listen.Start();
-
         }
 
         protected override void OnStop()

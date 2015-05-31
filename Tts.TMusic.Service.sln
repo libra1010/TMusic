@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tts.TMusic.Communication", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tts.TMusic.TPlayer", "Tts.TMusic.TPlayer\Tts.TMusic.TPlayer.csproj", "{932265D9-6DA8-4ED4-9B9D-929AA55F4453}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tts.TMusic.Data", "Tts.TMusic.Data\Tts.TMusic.Data.csproj", "{EE8D0F47-D1D3-42A6-8CB1-B71A5520BACF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{932265D9-6DA8-4ED4-9B9D-929AA55F4453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932265D9-6DA8-4ED4-9B9D-929AA55F4453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932265D9-6DA8-4ED4-9B9D-929AA55F4453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8D0F47-D1D3-42A6-8CB1-B71A5520BACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8D0F47-D1D3-42A6-8CB1-B71A5520BACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8D0F47-D1D3-42A6-8CB1-B71A5520BACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8D0F47-D1D3-42A6-8CB1-B71A5520BACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
