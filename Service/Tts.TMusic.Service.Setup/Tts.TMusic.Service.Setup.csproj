@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceAdd.Designer.cs">
+      <DependentUpon>ServiceAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="TMusicSetup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ServiceAdd.resx">
+      <DependentUpon>ServiceAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TMusicSetup.resx">
       <DependentUpon>TMusicSetup.cs</DependentUpon>
     </EmbeddedResource>

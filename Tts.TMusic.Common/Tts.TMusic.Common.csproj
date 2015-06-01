@@ -44,6 +44,7 @@
     <Compile Include="ChannelEntitys\SongControlEntity.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CMDHelper.cs" />
     <Compile Include="CommandFlag.cs" />
     <Compile Include="Mp3Info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
