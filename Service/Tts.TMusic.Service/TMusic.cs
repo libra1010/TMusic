@@ -12,12 +12,15 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using Tts.TMusic.Common;
+using Tts.TMusic.Data;
 using Tts.TMusic.Service.Server;
 
 namespace Tts.TMusic.Service
 {
     public partial class TMusic : ServiceBase
     {
+        internal static ServiceConfig _config = null;
         public TMusic()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace Tts.TMusic.Service
         ServerListen listen = null;
         protected override void OnStart(string[] args)
         {
+            _config = ConfigData.LoadConfig();
             EexcUpdate();
             string name = System.Environment.MachineName;
             win = new ServiceWindow();
@@ -34,7 +38,7 @@ namespace Tts.TMusic.Service
             win.Visible = false;
             win.Show();
             listen = new ServerListen();
-            listen.Start();
+            listen.Start(_config.Port);
         }
 
         private IScheduler sched = null;
@@ -63,7 +67,7 @@ namespace Tts.TMusic.Service
             // Trigger the job to run on the next round minute
             ITrigger trigger = TriggerBuilder.Create()
                 .WithIdentity("trigger1", "group1")
-                .StartNow().WithCronSchedule("0 0/6 * * * ?")
+                .StartNow().WithCronSchedule("0 0/1 * * * ?")
                 .Build();
 
             // Tell quartz to schedule the job using our trigger

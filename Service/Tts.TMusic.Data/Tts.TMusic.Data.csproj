@@ -48,7 +48,9 @@
     <Compile Include="SQLiteHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config.lock.db" />
+    <None Include="Config.lock.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

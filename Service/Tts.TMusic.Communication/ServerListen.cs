@@ -11,11 +11,11 @@ namespace Tts.TMusic.Service.Server
     {
         private IServerSocket _server;
         
-        public void Start() 
+        public void Start(int port) 
         {
             _server = new IServerSocket(10, 1024 * 4);
             _server.Init();
-            _server.Start("0.0.0.0", 2112);
+            _server.Start("0.0.0.0", port);
             _server.OnClientConnect += _server_OnClientConnect;
             _server.OnClientRead += _server_OnClientRead;
             _server.OnClientDisconnect += _server_OnClientDisconnect;

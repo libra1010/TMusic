@@ -4,13 +4,22 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tts.TMusic.Common;
 
-namespace Tts.TMusic.Data
+
+namespace Tts.TMusic.Service.Updates
 {
     public class ConfigData
     {
         private static ServiceConfig _config = null;
+
+        private readonly static string CONN_STR = GetConnStr();
+
+        private static string GetConnStr() 
+        {
+            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(System.AppDomain.CurrentDomain.BaseDirectory);
+           return "Data Source=" + System.IO.Path.Combine(di.Parent.FullName, "Config.lock.db") + ";Pooling=true;FailIfMissing=false;";
+        }
+
         /// <summary>
         /// 加载CONFIG
         /// </summary>
@@ -19,8 +28,8 @@ namespace Tts.TMusic.Data
         {
             if (_config != null && !isReLoad)
                 return _config;
-          
-            using (SQLiteDataReader reader = DBUtility.SQLiteHelper.ExecuteReader(ConsString.CON_STR, System.Data.CommandType.Text, "SELECT * FROM Configs WHERE Status=1")) 
+
+            using (SQLiteDataReader reader = DBUtility.SQLiteHelper.ExecuteReader(CONN_STR, System.Data.CommandType.Text, "SELECT * FROM Configs WHERE Status=1")) 
             {
                 while (reader.Read())
                 {

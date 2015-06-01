@@ -12,7 +12,7 @@ namespace Tts.TMusic.Updates.Web.Controllers
     {
         public string GetLastVersion()
         {
-            var path = Server.MapPath("~ServiceVersion.xml");
+            var path = Server.MapPath("/ServiceVersion.xml");
             XDocument xdoc = XDocument.Load(path);
             var v = xdoc.Element("File").Element("Version").Value.Trim();
             return v;
@@ -20,7 +20,7 @@ namespace Tts.TMusic.Updates.Web.Controllers
 
         public ActionResult Download()
         {
-            var path = Server.MapPath("~/ServiceUpdates/last.zip");
+            var path = Server.MapPath("/ServiceUpdates/last.zip");
             return new FilePathResult(path, "application/x-zip-compressed");
         }
     }

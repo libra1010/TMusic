@@ -8,6 +8,10 @@ namespace Tts.TMusic.Data
 {
     internal class ConsString
     {
-        internal readonly static string CON_STR = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "");
+        /// <summary>
+        /// 连接字符串
+        /// Data Source=local\\tmpdata.db.lock;Pooling=true;FailIfMissing=false;Password=yiwowoyi.password
+        /// </summary>
+        internal readonly static string CON_STR = "Data Source=" + System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Config.lock.db") + ";Pooling=true;FailIfMissing=false;";
     }
 }
