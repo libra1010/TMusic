@@ -37,14 +37,14 @@
             this.lsbMsg.ItemHeight = 12;
             this.lsbMsg.Location = new System.Drawing.Point(13, 13);
             this.lsbMsg.Name = "lsbMsg";
-            this.lsbMsg.Size = new System.Drawing.Size(259, 244);
+            this.lsbMsg.Size = new System.Drawing.Size(465, 436);
             this.lsbMsg.TabIndex = 0;
             // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(481, 464);
             this.Controls.Add(this.lsbMsg);
             this.Name = "UpdateForm";
             this.Text = "更新。。。";

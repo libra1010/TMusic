@@ -22,5 +22,10 @@ namespace Tts.TMusic.Common
         /// 最新版本获取地址
         /// </summary>
         public string LastVersionAddr { get; set; }
+
+        /// <summary>
+        /// 最后版本下载地址
+        /// </summary>
+        public string DownloadAddr { get; set; }
     }
 }

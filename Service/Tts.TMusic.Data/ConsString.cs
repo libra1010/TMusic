@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tts.TMusic.Common;
 
 namespace Tts.TMusic.Data
 {
-    public class ConfigData
+    internal class ConsString
     {
-        public static ServiceConfig LoadConfig() 
-        {
-            return null;
-        }
+        internal readonly static string CON_STR = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "");
     }
 }

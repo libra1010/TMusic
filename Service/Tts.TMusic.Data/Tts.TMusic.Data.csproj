@@ -32,6 +32,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\packages\System.Data.SQLite.1.0.94.4\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigData.cs" />
+    <Compile Include="ConsString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLiteHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config.lock.db" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tts.TMusic.Common\Tts.TMusic.Common.csproj">
+      <Project>{a632153d-a349-4da8-9d9e-61bfb85af16f}</Project>
+      <Name>Tts.TMusic.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
