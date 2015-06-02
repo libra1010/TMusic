@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tts.TMusic.Service.Controller
 {
-    public class Class1
+    internal class ControllerFactory
     {
+        //internal static IController CreateController(Common.CommandFlag cmd) 
+        //{
+            
+        //}
     }
 }

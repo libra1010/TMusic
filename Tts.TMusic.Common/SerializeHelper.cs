@@ -32,19 +32,18 @@ namespace Tts.TMusic.Common
         {
             return SerializeObject(pObj);
         }
-
-
+        
         /// <summary>
         /// 把字节反序列化成相应的对象
         /// </summary>
         /// <param name="pBytes">字节流</param>
         /// <returns>object</returns>
-        public static object DeserializeObject(byte[] pBytes)
+        public static object DeserializeObject(byte[] pBytes, int index, int count)
         {
             object _newOjb = null;
             if (pBytes == null)
                 return _newOjb;
-            System.IO.MemoryStream _memory = new System.IO.MemoryStream(pBytes);
+            System.IO.MemoryStream _memory = new System.IO.MemoryStream(pBytes, index, count);
             _memory.Position = 0;
             BinaryFormatter formatter = new BinaryFormatter();
             _newOjb = formatter.Deserialize(_memory);
@@ -52,9 +51,19 @@ namespace Tts.TMusic.Common
             return _newOjb;
         }
 
+        public static object DeserializeObject(byte[] pBytes)
+        {
+            return DeserializeObject(pBytes, 0, pBytes.Length);
+        }
+
+        public static T DeserializeObject<T>(byte[] pBytes, int index, int count)
+        {
+            return (T)DeserializeObject(pBytes, index, count);
+        }
+
         public static T DeserializeObject<T>(byte[] pBytes)
         {
-            return (T)DeserializeObject(pBytes);
+            return DeserializeObject<T>(pBytes, 0, pBytes.Length);
         }
     }
 }

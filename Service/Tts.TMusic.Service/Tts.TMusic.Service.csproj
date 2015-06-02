@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceContext.cs" />
     <Compile Include="UpdateJob.cs" />
   </ItemGroup>
   <ItemGroup>
